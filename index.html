@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio Nails Milena Scharman | Manicure em Cananéia</title>
+<meta name="description" content="Manicure no Acaraú, em Cananéia (SP). Unhas firmes e bem cuidadas, materiais esterilizados. Nota 5,0 no Google. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mangue:#1E3A33;      /* verde do manguezal de Cananéia */
+    --mangue-claro:#2C5248;
+    --perola:#EEF0F1;      /* nácar frio, não creme */
+    --concha:#EBC3C0;      /* rosa de concha */
+    --esmalte:#8C1C3A;     /* cereja de esmalte */
+    --tinta:#18211E;
+    --linha:#CFD6D3;
+    --pele:#E6C3AE;
+    --cor-unha:var(--esmalte);
+    --ponta:var(--esmalte);
+    --display:"Gloock", Georgia, serif;
+    --texto:"Figtree", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--perola);color:var(--tinta);font:400 1.0625rem/1.6 var(--texto);-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--esmalte);outline-offset:3px;border-radius:4px}
+  .wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+
+  /* topo */
+  .topo{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0}
+  .marca{font:400 1.35rem/1.1 var(--display);text-decoration:none}
+  .marca small{display:block;font:500 .8rem/1.4 var(--texto);color:#4d5a55;margin-top:2px}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--esmalte);color:#fff;text-decoration:none;font-weight:600;padding:14px 22px;border-radius:999px;transition:background .2s}
+  .btn:hover{background:#6f1530}
+  .btn svg{width:20px;height:20px;flex:none}
+  .btn--leve{background:transparent;color:var(--tinta);border:1.5px solid var(--tinta)}
+  .btn--leve:hover{background:var(--tinta);color:#fff}
+  .topo .btn{padding:10px 18px;font-size:.95rem}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:40px 0 88px}
+  h1{font:400 clamp(2.6rem,5.6vw,4.6rem)/1.02 var(--display);margin:0 0 24px;letter-spacing:-.01em;max-width:12ch}
+  .hero p.lead{font-size:1.2rem;max-width:36ch;margin:0 0 32px;color:#33403b}
+  .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px}
+  .nota{display:flex;align-items:center;gap:14px;font-size:.95rem;color:#3c4944}
+  .nota strong{font:400 2rem/1 var(--display);color:var(--tinta)}
+  .estrelas{color:var(--esmalte);letter-spacing:2px}
+
+  /* a mão: o momento memorável */
+  .mao{background:var(--mangue);border-radius:28px 28px 180px 28px;padding:48px 32px 32px;color:var(--perola)}
+  .dedos{display:flex;justify-content:center;align-items:flex-end;gap:14px;height:280px}
+  .dedo{width:58px;background:linear-gradient(180deg,var(--pele),#d9ae96);border-radius:30px 30px 0 0;position:relative;display:flex;justify-content:center;padding-top:12px}
+  .dedo:nth-child(1){height:150px;width:50px}
+  .dedo:nth-child(2){height:230px}
+  .dedo:nth-child(3){height:270px}
+  .dedo:nth-child(4){height:240px}
+  .dedo:nth-child(5){height:190px;width:52px}
+  .unha{width:72%;height:62px;border-radius:50% 50% 44% 44% / 62% 62% 38% 38%;
+        background:linear-gradient(175deg,var(--ponta) 0 26%,var(--cor-unha) 27%);
+        box-shadow:inset 6px 6px 0 -2px rgba(255,255,255,.28);
+        transition:background .45s ease}
+  .dedo:nth-child(1) .unha,.dedo:nth-child(5) .unha{height:52px}
+  .paleta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:28px;padding:0;list-style:none}
+  .paleta button{appearance:none;border:2px solid transparent;background:none;color:var(--perola);font:500 .85rem/1 var(--texto);display:flex;flex-direction:column;align-items:center;gap:8px;padding:6px;border-radius:12px;cursor:pointer}
+  .paleta button span{width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.5)}
+  .paleta button[aria-pressed="true"]{border-color:var(--concha)}
+  .mao p{text-align:center;margin:18px 0 0;font-size:.9rem;opacity:.8}
+
+  section{padding:96px 0}
+  h2{font:400 clamp(2rem,4vw,3rem)/1.08 var(--display);margin:0 0 20px;max-width:18ch}
+  .intro{max-width:54ch;color:#3c4944;margin:0 0 48px}
+
+  /* serviços: lista, não cards */
+  .servicos{display:grid;grid-template-columns:repeat(2,1fr);gap:0 64px;border-top:1.5px solid var(--tinta)}
+  .servico{padding:28px 0;border-bottom:1px solid var(--linha)}
+  .servico h3{font:600 1.2rem/1.3 var(--texto);margin:0 0 6px}
+  .servico p{margin:0;color:#46534e;max-width:44ch}
+
+  /* higiene */
+  .higiene{background:var(--mangue);color:var(--perola)}
+  .higiene .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
+  .higiene blockquote{margin:0;font:400 clamp(1.7rem,3.2vw,2.5rem)/1.2 var(--display)}
+  .higiene blockquote footer{font:500 .95rem/1.4 var(--texto);margin-top:20px;color:var(--concha)}
+  .higiene ul{margin:0;padding:0;list-style:none}
+  .higiene li{padding:18px 0;border-bottom:1px solid var(--mangue-claro);display:flex;gap:16px}
+  .higiene li:first-child{padding-top:0}
+  .higiene li svg{flex:none;width:22px;height:22px;color:var(--concha);margin-top:3px}
+
+  /* fotos */
+  .fotos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .foto{aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:repeating-linear-gradient(135deg,#e2e6e5 0 14px,#d8dddb 14px 28px);position:relative}
+  .foto img{width:100%;height:100%;object-fit:cover}
+  .foto:nth-child(2){transform:translateY(40px)}
+  .foto.sem-imagem::after{content:"Foto do studio";position:absolute;inset:auto 0 16px;text-align:center;font-size:.9rem;color:#5b6863}
+  .fotos-nota{margin:72px 0 0;font-size:.95rem;color:#4d5a55}
+
+  /* avaliações */
+  .avaliacoes{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+  .destaque{font:400 clamp(1.6rem,3vw,2.3rem)/1.22 var(--display);margin:0}
+  .destaque + cite{display:block;margin-top:18px;font-style:normal;font-weight:600}
+  .outras{display:grid;gap:28px}
+  .outras figure{margin:0;padding-left:20px;border-left:3px solid var(--concha)}
+  .outras blockquote{margin:0 0 8px}
+  .outras figcaption{font-weight:600;font-size:.95rem}
+  .resumo{margin-top:40px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+
+  /* visita */
+  .visita{display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:stretch}
+  .dados dl{margin:0 0 32px}
+  .dados dt{font-weight:600;margin-top:20px}
+  .dados dd{margin:4px 0 0;color:#3c4944}
+  .mapa{border-radius:24px;overflow:hidden;min-height:360px;background:#dfe4e2}
+  .mapa iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
+
+  footer.rodape{border-top:1px solid var(--linha);padding:32px 0 48px;font-size:.9rem;color:#4d5a55}
+  footer.rodape .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media (max-width:860px){
+    .hero,.higiene .wrap,.avaliacoes,.visita{grid-template-columns:1fr}
+    .hero{padding-top:16px;gap:40px}
+    .servicos{grid-template-columns:1fr}
+    section{padding:72px 0}
+    .mao{border-radius:24px 24px 120px 24px}
+  }
+  @media (max-width:520px){
+    .topo .btn span{display:none}
+    .topo .btn{padding:10px}
+    .dedos{gap:8px;height:230px}
+    .dedo{width:46px!important}
+    .dedo:nth-child(1){height:120px}.dedo:nth-child(2){height:190px}.dedo:nth-child(3){height:225px}.dedo:nth-child(4){height:200px}.dedo:nth-child(5){height:155px}
+    .fotos{grid-template-columns:repeat(3,1fr);gap:8px}
+    .foto:nth-child(2){transform:translateY(20px)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></symbol>
+  <symbol id="ok" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M4 12.5 9.5 18 20 6"/></symbol>
+</svg>
+
+<div class="wrap">
+  <header class="topo">
+    <a class="marca" href="#">Studio Nails<small>Milena Scharman</small></a>
+    <a class="btn" href="https://wa.me/5513996437052?text=Ol%C3%A1%2C%20Milena!%20Quero%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp">
+      <svg aria-hidden="true"><use href="#zap"/></svg><span>Agendar</span>
+    </a>
+  </header>
+
+  <main>
+  <div class="hero">
+    <div>
+      <h1>Unhas firmes e bonitas por mais tempo</h1>
+      <p class="lead">Manicure com atenção a cada detalhe, no Acaraú, em Cananéia. Atendimento com hora marcada pela Milena.</p>
+      <div class="acoes">
+        <a class="btn" href="https://wa.me/5513996437052?text=Ol%C3%A1%2C%20Milena!%20Quero%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#zap"/></svg>Agendar pelo WhatsApp
+        </a>
+        <a class="btn btn--leve" href="#visita">Como chegar</a>
+      </div>
+      <div class="nota">
+        <strong>5,0</strong>
+        <div><span class="estrelas" aria-hidden="true">★★★★★</span><br>9 avaliações no Google</div>
+      </div>
+    </div>
+
+    <div class="mao" aria-label="Simulador de cores de esmalte">
+      <div class="dedos" aria-hidden="true">
+        <div class="dedo"><div class="unha"></div></div>
+        <div class="dedo"><div class="unha"></div></div>
+        <div class="dedo"><div class="unha"></div></div>
+        <div class="dedo"><div class="unha"></div></div>
+        <div class="dedo"><div class="unha"></div></div>
+      </div>
+      <ul class="paleta" role="list">
+        <li><button type="button" data-cor="#8C1C3A" aria-pressed="true"><span style="background:#8C1C3A"></span>Cereja</button></li>
+        <li><button type="button" data-cor="#E3B5AE"><span style="background:#E3B5AE"></span>Nude rosé</button></li>
+        <li><button type="button" data-cor="#2F6B5A"><span style="background:#2F6B5A"></span>Mangue</button></li>
+        <li><button type="button" data-cor="#F1EEF2"><span style="background:#F1EEF2"></span>Pérola</button></li>
+        <li><button type="button" data-cor="#F2D9D4" data-ponta="#FFFFFF"><span style="background:linear-gradient(180deg,#fff 0 35%,#F2D9D4 36%)"></span>Francesinha</button></li>
+      </ul>
+      <p>Toque numa cor e veja nas unhas</p>
+    </div>
+  </div>
+  </main>
+</div>
+
+<section id="servicos">
+  <div class="wrap">
+    <h2>O que você encontra no studio</h2>
+    <p class="intro">Do cuidado do dia a dia à unha que dura semanas. Me chama no WhatsApp para saber valores e o melhor serviço para a sua unha.</p>
+    <div class="servicos">
+      <div class="servico"><h3>Manicure e pedicure</h3><p>Cutilagem cuidadosa, lixamento e esmaltação tradicional.</p></div>
+      <div class="servico"><h3>Esmaltação em gel</h3><p>Cor com brilho que dura bem mais que o esmalte comum, sem descascar.</p></div>
+      <div class="servico"><h3>Fortalecimento</h3><p>Para quem quer uma unha firme e bonita sem precisar de alongamento grande.</p></div>
+      <div class="servico"><h3>Manutenção</h3><p>Retoque do gel ou do fortalecimento para manter tudo no lugar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="higiene">
+  <div class="wrap">
+    <blockquote>
+      “Tem cuidado com higiene, materiais são devidamente esterilizados.”
+      <footer>Avaliação de cliente no Google</footer>
+    </blockquote>
+    <ul>
+      <li><svg aria-hidden="true"><use href="#ok"/></svg><div><strong>Alicates e espátulas esterilizados</strong><br>Cada cliente recebe material limpo e esterilizado.</div></li>
+      <li><svg aria-hidden="true"><use href="#ok"/></svg><div><strong>Capricho em cada detalhe</strong><br>Atendimento dedicado do começo ao fim, como as clientes contam nas avaliações.</div></li>
+      <li><svg aria-hidden="true"><use href="#ok"/></svg><div><strong>Atendimento com hora marcada</strong><br>Sem pressa e sem fila: o horário é só seu.</div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="fotos">
+  <div class="wrap">
+    <h2>Trabalhos recentes</h2>
+    <div class="fotos">
+      <div class="foto"><img loading="lazy" alt="Unhas feitas no Studio Nails Milena Scharman" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TFXmVbHTJGHYr9BUsQz4hHYU7fdOVG4DfF6PT00cTGap-4i6gcnE9KFZRyUkX0e_E6Hl_AOg7tGYTayi9pevPntWRVu0ZsHMrgAgUu-vSc9GSfRBbzzxs0LQiNSYWKbtm8-e-0wwuesw4=w600-h1066-k-no"></div>
+      <div class="foto"><img loading="lazy" alt="Unhas feitas no Studio Nails Milena Scharman" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QA-wmX3qPjJkCWyjDiNch3EPXjm_UvwiFaEPwcb2hBTYsKGRd_VAInR3Urv9VB8LH30OL5fWp2XSp1J5yK_6xjMRIosJdJuJCjY9YOd7V-0p4oim8EjhIFCuiNtnbc1-G-UbMXKhj7032z=w600-h1066-k-no"></div>
+      <div class="foto"><img loading="lazy" alt="Unhas feitas no Studio Nails Milena Scharman" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QINN-ra6Kx9X1rmlhN34CKWmymTNnfzaQUKr8IvVgMKH2OY6PndFzIKJX1Rxi0hBRBAb7OMLUHhZ5fKpJzKQ2nsLQm-CxVbehZvZwdz8XDRQ8WlyJpPe0Uq6CA6JAAS7IVnkf2jbFlHVmY=w600-h1066-k-no"></div>
+    </div>
+    <p class="fotos-nota">Mais fotos no <a href="https://maps.app.goo.gl/tjkoCzAMo11eH1keA" target="_blank" rel="noopener">perfil do Google</a>.</p>
+  </div>
+</section>
+
+<section id="avaliacoes" style="padding-top:24px">
+  <div class="wrap">
+    <h2>Quem já fez, recomenda</h2>
+    <div class="avaliacoes">
+      <div>
+        <p class="destaque">“Atendimento sensacional, profissional incrível e resolveu a minha maior dificuldade em ter uma unha firme e linda por mais tempo sem precisar de alongamento grande.”</p>
+        <cite>Aromas Casa da Praia</cite>
+      </div>
+      <div class="outras">
+        <figure><blockquote>“A Milena é uma excelente profissional, muito dedicada e caprichosa. Super indico. Pode confiar.”</blockquote><figcaption>Rafa Castro</figcaption></figure>
+        <figure><blockquote>“Uma excelente profissional, super recomendo, amei a experiência.”</blockquote><figcaption>Eliete Pereira (Lih)</figcaption></figure>
+      </div>
+    </div>
+    <div class="resumo">
+      <span class="estrelas" aria-hidden="true">★★★★★</span>
+      <span>Nota 5,0 em 9 avaliações</span>
+      <a href="https://maps.app.goo.gl/tjkoCzAMo11eH1keA" target="_blank" rel="noopener">Ler todas no Google</a>
+    </div>
+  </div>
+</section>
+
+<section id="visita" style="padding-top:24px">
+  <div class="wrap visita">
+    <div class="dados">
+      <h2>Venha conhecer</h2>
+      <dl>
+        <dt>Endereço</dt>
+        <dd>R. Joaquim Pereira, 287, Acaraú<br>Cananéia, SP, 11990-000</dd>
+        <dt>Horário</dt>
+        <dd>Abre segunda às 9h, com hora marcada.<br>Confirme os dias e horários pelo WhatsApp.</dd>
+        <dt>WhatsApp</dt>
+        <dd><a href="https://wa.me/5513996437052" target="_blank" rel="noopener">(13) 99643-7052</a></dd>
+      </dl>
+      <a class="btn" href="https://wa.me/5513996437052?text=Ol%C3%A1%2C%20Milena!%20Quero%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">
+        <svg aria-hidden="true"><use href="#zap"/></svg>Agendar pelo WhatsApp
+      </a>
+    </div>
+    <div class="mapa">
+      <iframe title="Mapa: Studio Nails Milena Scharman em Cananéia" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=-25.0111128,-47.9358801&z=17&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="rodape">
+  <div class="wrap">
+    <span>Studio Nails Milena Scharman, Cananéia, SP</span>
+    <a href="https://maps.app.goo.gl/tjkoCzAMo11eH1keA" target="_blank" rel="noopener">Ver no Google Maps</a>
+  </div>
+</footer>
+
+<script>
+  const root = document.documentElement;
+  document.querySelectorAll('.paleta button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.paleta button').forEach(b => b.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
+      root.style.setProperty('--cor-unha', btn.dataset.cor);
+      root.style.setProperty('--ponta', btn.dataset.ponta || btn.dataset.cor);
+    });
+  });
+  document.querySelectorAll('.foto img').forEach(img => {
+    const falhou = () => { img.parentElement?.classList.add('sem-imagem'); img.remove(); };
+    img.addEventListener('error', falhou);
+    if (img.complete && img.naturalWidth === 0) falhou();
+  });
+</script>
+</body>
+</html>
